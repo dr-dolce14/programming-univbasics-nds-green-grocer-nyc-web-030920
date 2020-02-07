@@ -92,7 +92,7 @@ def checkout(cart, coupons)
     if grand_total > 100
       grand_total = grand_total - (grand_total - 0.10)
      end
-      consolidated_cart = consolidate_cart(cart)
+  consolidated_cart = consolidate_cart(cart)
   couponed_cart = apply_coupons(consolidated_cart, coupons)
   clearanced_cart = apply_clearance(couponed_cart)
   i = 0
@@ -104,7 +104,7 @@ def checkout(cart, coupons)
     i +=1
     end
     if grand_total > 100
-      grand_total = grand_total - (grand_total - 0.10)
+      grand_total *= 0.90
      end
     grand_total.round(2)
 end
