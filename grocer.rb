@@ -78,18 +78,18 @@ def checkout(cart, coupons)
   #
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
-  checkout = consolidate_cart(cart)
-  checkout = apply_coupons(checkout, cart)
-  checkout = apply_clearance(checkout)
+  checkout = consolidate_cart( cart )
+  checkout = apply_coupons( checkout, cart )
+  checkout = apply_clearance( checkout )
   i = 0
   grand_total = 0
   while i < checkout.length do
     item_price = checkout[i][:price] * checkout[i][:count]
     grand_total =+ item_price
     i +=1
+    end
     if grand_total > 100
       grand_total = grand_total - (grand_total - 0.10)
-    end
+     end
     grand_total
-  end
 end
