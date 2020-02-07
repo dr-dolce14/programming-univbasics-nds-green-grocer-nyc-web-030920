@@ -40,7 +40,7 @@ def apply_coupons(cart, coupons)
     if ( coupon_item_present[:count] / coupons[coupon_index][:num] >= 1 )
       cart.push ( {:item => "#{coupons[coupon_index][:item]} W/COUPON",
                :price => (coupons[coupon_index][:cost] / 
-              coupons[coupon_index][:num].round(2)),
+              coupons[coupon_index][:num]).round(2),
               :clearance => coupon_item_present[:clearance],
               :count => coupon_item_present[:count] - (coupon_item_present[:count] % coupons[coupon_index][:num])
              })
